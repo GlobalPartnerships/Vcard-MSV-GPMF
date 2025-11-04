@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Marcela Sánchez Vargas</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #7A0F32;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .contact-info {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 1rem 0.5rem;
+            background: #0077b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background: #023e8a;
+        }
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #7A0F32;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer {
+            background: #7A0F32;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="GPMF LOGO v 3.0-03.png" alt="Logo GPMF" class="logo">
+        <h1>Global Partnerships Multidisciplinary Firm</h1>
+        <p>Consultora boutique para empresas y ONGs con visión internacional</p>
+    </header>
+
+    <div class="container">
+        <div class="contact-card">
+            <h2>Marcela Sánchez Vargas</h2>
+            <p><strong>Co-Fundadora & Business Development</strong></p>
+            <p>Global Partnerships & Multidisciplinary Firm</p>
+            
+            <div class="contact-info">
+                <p>📞 <a href="tel:+573156166760">+57 315 616 6760</a></p>
+                <p>🌐 <a href="https://gpmf-global-partnerships-kfsp4ij.gamma.site/" target="_blank">gpmf-global-partnerships-kfsp4ij.gamma.site</a></p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/gpmf" target="_blank">LinkedIn GPMF</a> | 
+                <a href="https://www.linkedin.com/in/marcelasanchezintercultural/" target="_blank">LinkedIn Personal</a>
+            </div>
+
+            <button class="btn" id="addToContacts">Añadir a contactos</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Global Partnerships Multidisciplinary Firm. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('addToContacts').addEventListener('click', function() {
+            // Create vCard content
+            const vCard = `BEGIN:VCARD
+VERSION:3.0
+N:Sánchez Vargas;Marcela;;;
+FN:Marcela Sánchez Vargas
+TITLE:Co-Fundadora & Business Development
+ORG:Global Partnerships & Multidisciplinary Firm
+TEL;type=CELL;type=VOICE;type=pref:+57 315 616 6760
+EMAIL:contacto.gpmfsas@gmail.com
+URL:https://gpmf-global-partnerships-kfsp4ij.gamma.site
+URL;type=linkedin:https://www.linkedin.com/in/marcelasanchezintercultural/
+URL;type=company:https://www.linkedin.com/company/gpmf
+REV:${new Date().toISOString()}
+END:VCARD`;
+
+            // Create blob and download link
+            const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Marcela_Sanchez_Vargas.vcf';
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            setTimeout(() => {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
