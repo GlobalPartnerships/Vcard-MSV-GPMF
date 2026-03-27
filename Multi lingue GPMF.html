@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría en Adopción de IA - GPMF</title>
+    <style>
+        :root {
+            /* Paleta de Colores GPMF */
+            --gpmf-burgundy: #7A0F32;
+            --gpmf-black: #000000;
+            --gpmf-warm-gray: #F5F5F5;
+            --gpmf-deep-charcoal: #2E2E2E;
+
+            /* Mapeo de colores para la landing page */
+            --primary-color: var(--gpmf-burgundy);
+            --secondary-color: var(--gpmf-deep-charcoal);
+            --light-bg: var(--gpmf-warm-gray);
+            --dark-bg: var(--gpmf-deep-charcoal);
+            --text-color: var(--gpmf-black);
+            --white-color: #fff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--white-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: var(--white-color);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gpmf-warm-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo img {
+            max-height: 40px; /* Tamaño mínimo para medios digitales */
+            /* Regla de Espacio de Protección:
+               Asegúrate de que no haya elementos gráficos o texto dentro de un área igual a la altura del logo.
+               Añade un margen o padding para respetar esta regla si es necesario. */
+        }
+        .language-switcher {
+            position: relative;
+        }
+        .language-switcher select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid var(--secondary-color);
+            background-color: var(--light-bg);
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            color: var(--secondary-color);
+        }
+        .hero {
+            background: var(--light-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #5d0b26; /* Tono más oscuro de burgundy */
+        }
+        .content-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .content-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        .content-section p {
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .feature-item {
+            padding: 30px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .feature-item h3 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .testimonials {
+            background: var(--dark-bg);
+            color: var(--white-color);
+        }
+        .testimonial-item {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-style: italic;
+        }
+        .testimonial-item .author {
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: bold;
+            color: var(--gpmf-burgundy);
+        }
+        .faq {
+            background: var(--light-bg);
+        }
+        .faq .faq-item {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .faq .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        footer {
+            background: var(--dark-bg);
+            color: var(--white-color);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .language-content {
+            display: none;
+        }
+        .language-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">
+                    <span style="color: var(--gpmf-burgundy);">GPMF</span>
+                </a>
+            </div>
+            <div class="language-switcher">
+                <select id="lang-switcher">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="language-content active" id="lang-es">
+            <section class="hero" id="hero">
+                <div class="container">
+                    <h1>Impulsamos la Adopción Estratégica de IA en tu Empresa</h1>
+                    <p>Guía pragmática y orientada a resultados para transformar tu organización, sin tecnicismos innecesarios. Adaptamos la IA a tu nivel de madurez digital.</p>
+                    <a href="#contact" class="btn">Empezar Ahora</a>
+                </div>
+            </section>
+
+            <section class="content-section" id="services">
+                <div class="container">
+                    <h2>Nuestra Consultoría: De la Estrategia a la Implementación</h2>
+                    <p>Vamos más allá de la teoría. Te acompañamos en cada fase del viaje de la IA, asegurando que cada proyecto genere un valor real y sostenible.</p>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h3>Diagnóstico y Planificación</h3>
+                            <p>Identificamos oportunidades de IA que se alinean con tus objetivos de negocio, creando una hoja de ruta clara y realista.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Optimización de Procesos</h3>
+                            <p>Utilizamos la IA para automatizar tareas, analizar datos y mejorar la eficiencia operativa, liberando a tu equipo para el trabajo estratégico.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Gestión del Cambio Cultural</h3>
+                            <p>La tecnología es solo la mitad de la ecuación. Preparamos a tus equipos para la transformación, fomentando una cultura de innovación y adaptación.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Enfoque Ético y Humano</h3>
+                            <p>Priorizamos la ética y la transparencia. Nos aseguramos de que la implementación de la IA sea responsable y beneficie a todos los miembros de tu organización.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section testimonials">
+                <div class="container">
+                    <h2>Experiencias de Éxito</h2>
+                    <div class="testimonial-item">
+                        <p>"Gracias al apoyo de los consultores, aprendí a organizar mejor mis datos y automatizar tareas clave, como la facturación y el email marketing. Esto ha transformado la gestión de mi negocio en un modelo más inteligente, ágil y humano."</p>
+                        <div class="author">- Casa Normandía Coliving</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section faq" id="faq">
+                <div class="container">
+                    <h2>Preguntas Frecuentes</h2>
+                    <div class="faq-item">
+                        <h4>¿Cómo sé si mi empresa necesita IA?</h4>
+                        <p>Realizamos un diagnóstico inicial para evaluar tu nivel de madurez digital y determinar dónde la IA puede generar el mayor impacto para tu negocio.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Es su servicio solo para grandes corporaciones?</h4>
+                        <p>No. Adaptamos nuestros servicios a empresas de todos los tamaños y sectores, desde startups hasta grandes compañías. Nuestro enfoque es pragmático y escalable.</p>
+                    </div>
+                    <div class="

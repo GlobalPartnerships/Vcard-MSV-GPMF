@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "howWeWork": "Wie Wir Arbeiten",
+    "pricing": "Preise",
+    "partners": "Partner",
+    "blog": "Ressourcen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Strategische Lösungen zur",
+    "titleHighlight": "Transformation Ihres Unternehmens",
+    "subtitle": "Wir fördern Unternehmenswachstum durch strategische Beratung, Data Governance und digitale Innovation",
+    "cta": "Kostenlose Beratung Anfordern",
+    "ctaSecondary": "Dienstleistungen Ansehen"
+  },
+  "whyGPMF": {
+    "title": "Warum GPMF Wählen?",
+    "subtitle": "Wir sind Ihr strategischer Partner für nachhaltiges Wachstum",
+    "pillar1Title": "Bewährte Erfahrung",
+    "pillar1Desc": "Über 15 Jahre Unternehmenstransformation auf 4 Kontinenten",
+    "pillar2Title": "Agile Methodik",
+    "pillar2Desc": "Messbare Ergebnisse in jeder Projektphase",
+    "pillar3Title": "Multidisziplinäres Team",
+    "pillar3Desc": "Experten für Strategie, Daten, Technologie und Geschäft",
+    "pillar4Title": "Personalisierter Ansatz",
+    "pillar4Desc": "Lösungen angepasst an Ihre Branche und einzigartigen Herausforderungen"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Lösungen für jede Phase Ihres Unternehmenswachstums",
+    "strategic": {
+      "title": "Strategische Beratung",
+      "desc": "Wir entwickeln maßgeschneiderte Strategien für Wachstum und Rentabilität Ihres Unternehmens",
+      "cta": "Mehr Erfahren"
+    },
+    "dataGovernance": {
+      "title": "Data Governance",
+      "desc": "Wir implementieren Governance-Frameworks zur Maximierung Ihres Datenwerts und Compliance-Sicherung",
+      "cta": "Mehr Erfahren"
+    },
+    "businessDev": {
+      "title": "Geschäftsentwicklung",
+      "desc": "Wir identifizieren und entwickeln strategische Allianzen zur Erweiterung Ihrer Marktreichweite",
+      "cta": "Mehr Erfahren"
+    },
+    "training": {
+      "title": "Unternehmensschulung",
+      "desc": "Schulungsprogramme zur Stärkung der Fähigkeiten Ihres Teams",
+      "cta": "Mehr Erfahren"
+    },
+    "internationalization": {
+      "title": "Internationalisierung",
+      "desc": "Wir begleiten Sie bei der Expansion in neue internationale Märkte mit Kulturstrategie",
+      "cta": "Mehr Erfahren"
+    },
+    "customSolutions": {
+      "title": "Maßgeschneiderte Lösungen",
+      "desc": "Wir entwickeln individuelle Projekte für Ihre spezifischen Bedürfnisse und Herausforderungen",
+      "cta": "Mehr Erfahren"
+    }
+  },
+  "testimonials": {
+    "title": "Was Unsere Kunden Sagen",
+    "subtitle": "Erfolgsgeschichten, die Organisationen transformiert haben"
+  },
+  "partners": {
+    "title": "Unsere Strategischen Partner",
+    "subtitle": "Wir arbeiten mit Branchenführern zusammen, um umfassende Lösungen zu liefern"
+  },
+  "newsletter": {
+    "title": "Bleiben Sie Auf Dem Laufenden",
+    "subtitle": "Erhalten Sie exklusive Einblicke, Markttrends und kostenlose Ressourcen",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "cta": "Abonnieren",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Kein Spam."
+  },
+  "contact": {
+    "title": "Bereit, Ihr Unternehmen Zu Transformieren?",
+    "subtitle": "Vereinbaren Sie eine kostenlose Beratung und entdecken Sie, wie wir Ihnen helfen können",
+    "formName": "Vollständiger Name",
+    "formEmail": "E-Mail-Adresse",
+    "formPhone": "Telefon",
+    "formCompany": "Unternehmen",
+    "formService": "Interessierter Service",
+    "formServicePlaceholder": "Wählen Sie einen Service",
+    "formMessage": "Erzählen Sie uns von Ihrem Projekt",
+    "formSubmit": "Nachricht Senden",
+    "infoTitle": "Kontaktinformationen",
+    "address": "Adresse",
+    "addressValue": "Stadt, Land",
+    "email": "E-Mail",
+    "emailValue": "kontakt@gpmfconsulting.com",
+    "phone": "Telefon",
+    "phoneValue": "+1 234 567 8900",
+    "hours": "Geschäftszeiten",
+    "hoursValue": "Mo - Fr: 9:00 - 18:00 Uhr",
+    "followUs": "Folgen Sie Uns"
+  },
+  "footer": {
+    "description": "Wir fördern Unternehmenswachstum durch innovative und maßgeschneiderte strategische Lösungen.",
+    "quickLinks": "Schnelllinks",
+    "services": "Dienstleistungen",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Abonnieren Sie, um unsere neuesten Nachrichten und Updates zu erhalten.",
+    "newsletterPlaceholder": "Ihre E-Mail-Adresse",
+    "copyright": "© 2025 GPMF Consulting. Alle Rechte vorbehalten.",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "cookies": "Cookie-Richtlinie"
+  },
+  "about": {
+    "title": "Über Uns",
+    "whoWeAre": "Wer Wir Sind",
+    "mission": "Mission",
+    "vision": "Vision",
+    "values": "Werte"
+  },
+  "common": {
+    "readMore": "Weiterlesen",
+    "learnMore": "Mehr Erfahren",
+    "getStarted": "Loslegen",
+    "backToTop": "Nach Oben",
+    "loading": "Laden...",
+    "close": "Schließen"
+  }
+}
