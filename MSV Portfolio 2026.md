@@ -73,7 +73,7 @@ Throughout my career, I have specialized in a critical niche: **building and sca
 
 ## IV. Strategic References & Institutional Endorsements
 
-*Líderes disponibles para referencias directas sobre mi dominio operativo y fluidez intercultural:*
+*Leaders available for direct references regarding my operational domain and intercultural fluency:*
 
 * **Andrés Osorio, Ph.D.** (Ex-Director CEMarin / U. Nacional) - [afosorioar@unal.edu.co](mailto:afosorioar@unal.edu.co)
 * **Susana Caballero, Ph.D.** (Nova Southeastern University, USA) - [caball1@nova.edu](mailto:caball1@nova.edu)
@@ -82,4 +82,4 @@ Throughout my career, I have specialized in a critical niche: **building and sca
 * **Thomas Wilke, Ph.D.** (JLU Giessen) - [Tom.Wilke@allzool.bio.uni-giessen.de](mailto:Tom.Wilke@allzool.bio.uni-giessen.de)
 
 ---
-*Este dossier digital consolida muestras técnicas, credenciales académicas verificadas y referencias estratégicas del ecosistema GPMF.*
+*This digital dossier consolidates technical samples, verified academic credentials, and strategic references of the GPMF ecosystem.*
