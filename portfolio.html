@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Portfolio | Marcela Sánchez Vargas</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gpmf-burgundy: #7A0F32;
+            --gamma-purple: #667eea;
+            --gamma-blue: #4facfe;
+            --gamma-pink: #f093fb;
+            --gamma-orange: #fa709a;
+            --gamma-green: #30cfd0;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-900: #1a1a1a;
+            
+            --shadow-soft: 0 20px 60px -10px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 30px 80px -15px rgba(0, 0, 0, 0.15);
+            --radius-card: 2rem;
+            --radius-btn: 9999px;
+            --transition-fluid: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray-50);
+            background: linear-gradient(-45deg, #f5f5f5, #ebebeb, #fafafa, #fdfdfd);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--gray-900);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .blob {
+            position: fixed;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            border-radius: 50%;
+            animation: float 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .blob-1 {
+            width: 500px; height: 500px;
+            background: linear-gradient(135deg, var(--gamma-purple), var(--gamma-blue));
+            top: -100px; left: -100px;
+        }
+        .blob-2 {
+            width: 400px; height: 400px;
+            background: linear-gradient(135deg, var(--gamma-pink), var(--gamma-orange));
+            bottom: -50px; right: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .dossier-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-card);
+            padding: 3rem;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-fluid);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .header-card {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, var(--gray-900), var(--gpmf-burgundy));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            font-style: italic;
+            border-left: 4px solid var(--gamma-purple);
+            padding-left: 1.5rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--gpmf-burgundy);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .section-title i {
+            color: var(--gamma-pink);
+        }
+
+        .content-group {
+            margin-bottom: 2rem;
+        }
+        
+        .content-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-group h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-group p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .content-group ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .content-group ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .content-group ul li::before {
+            content: '•';
+            color: var(--gpmf-burgundy);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: var(--radius-btn);
+            color: var(--gray-900);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition-fluid);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            cursor: pointer;
+        }
+
+        .btn-action i {
+            color: var(--gpmf-burgundy);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+            background: white;
+            color: var(--gpmf-burgundy);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gpmf-burgundy), var(--gamma-pink));
+            color: white !important;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(122, 15, 50, 0.2);
+            margin: 0 auto;
+            display: inline-flex;
+        }
+        
+        .btn-primary i {
+            color: white !important;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 20px 40px rgba(122, 15, 50, 0.3);
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .glass-card { padding: 2rem; }
+            .name { font-size: 2.2rem; }
+            .btn-group { flex-direction: column; }
+            .btn-action { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <main class="dossier-container">
+        
+        <!-- Header -->
+        <section class="glass-card header-card fade-in-up">
+            <h1 class="name">Marcela Sánchez Vargas</h1>
+            <p class="role">Founding Director | Strategic Operator</p>
+            <div class="btn-group" style="justify-content: center; margin-bottom: 1rem;">
+                <a href="https://www.linkedin.com/in/marcelasanchezintercultural" target="_blank" class="btn-action"><i class="fa-brands fa-linkedin-in"></i> LinkedIn Profile</a>
+            </div>
+            
+            <div class="quote">
+                "Orchestrating B2B growth through high-impact ecosystems, analytical rigor, and cross-border scalability."
+            </div>
+            <p style="color: var(--gray-600); font-size: 0.95rem;">
+                Throughout my career, I have specialized in a critical niche: <strong>building and scaling cross-border B2B partnership ecosystems</strong>. I act as the bridge between global corporate strategy and local operational execution, translating regulatory and commercial complexity into predictable, high-impact acquisition channels (Greenfield Operations).
+            </p>
+        </section>
+
+        <!-- KPI Metrics (WOW Factor) -->
+        <section class="glass-card fade-in-up delay-1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center; padding: 2rem;">
+            <div>
+                <div class="counter" data-target="10" style="font-size: 2.5rem; font-weight: 900; color: var(--gamma-purple);">0</div>
+                <div style="font-size: 0.9rem; color: var(--gray-600); font-weight: 600; text-transform: uppercase;">Years in Governance</div>
+            </div>
+            <div>
+                <div class="counter" data-target="750" data-prefix="€" data-suffix="k+" style="font-size: 2.5rem; font-weight: 900; color: var(--gamma-pink);">0</div>
+                <div style="font-size: 0.9rem; color: var(--gray-600); font-weight: 600; text-transform: uppercase;">Funds Managed</div>
+            </div>
+            <div>
+                <div class="counter" data-target="100" data-suffix="%" style="font-size: 2.5rem; font-weight: 900; color: var(--gamma-blue);">0</div>
+                <div style="font-size: 0.9rem; color: var(--gray-600); font-weight: 600; text-transform: uppercase;">Audit Compliance</div>
+            </div>
+            <div>
+                <div class="counter" data-target="90" data-suffix="%" style="font-size: 2.5rem; font-weight: 900; color: var(--gamma-orange);">0</div>
+                <div style="font-size: 0.9rem; color: var(--gray-600); font-weight: 600; text-transform: uppercase;">Friction Reduced</div>
+            </div>
+        </section>
+
+
+
+        <!-- Academic Credentials -->
+        <section class="glass-card fade-in-up delay-1">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Credentials</h2>
+            <div class="content-group">
+                <h3>European Master in Intercultural Education</h3>
+                <p>Freie Universität Berlin, Germany (2010)</p>
+            </div>
+            <div class="content-group">
+                <h3>B.S. in Mathematics</h3>
+                <p>Universidad Pedagógica Nacional, Colombia (2006) <br>
+                <em>Honors: Sports Merit Scholarship (Volleyball) for outstanding leadership and competitive excellence.</em></p>
+            </div>
+
+            <div class="cta-container">
+                <a href="assets/dossier/msv/index-portfolio-msv.pdf" target="_blank" class="btn-action btn-primary">
+                    <i class="fa-solid fa-file-pdf"></i> View Full Executive Dossier
+                </a>
+            </div>
+        </section>
+
+        <!-- Strategic Governance & Science Diplomacy -->
+        <section class="glass-card fade-in-up delay-2">
+            <h2 class="section-title"><i class="fa-solid fa-globe"></i> Strategic Governance & High-Level Stakeholder Management</h2>
+            <p style="color: var(--gray-600); margin-bottom: 2rem; font-style: italic;">Designing governance structures, aligning corporate incentives, and ensuring profitability for international boards of directors.</p>
+            
+            <div class="content-group">
+                <h3>1. Strategic Capital Acquisition & Management (CEMarin / DAAD)</h3>
+                <ul>
+                    <li><strong>The Challenge:</strong> Manage the financial architecture of a binational scientific consortium.</li>
+                    <li><strong>The Result:</strong> Transformed fragmented data into executive reports for the Board of Directors. Ensured the successful renewal of DAAD and BMBF funds (100% audit compliance, >€500k).</li>
+                    <li><strong>Innovation:</strong> Implementation of "The Online Executive Briefing" to accelerate decisions.</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="assets/dossier/msv/cemarin-annual-report-2018.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> P&L Reports (2018-2021)</a>
+                </div>
+            </div>
+
+            <div class="content-group">
+                <h3>2. Multi-Stakeholder Ecosystem Orchestration (BMBF Consortium)</h3>
+                <ul>
+                    <li><strong>The Challenge:</strong> Coordinate the strategic mandate to host the project (€1,000,000 from BMBF).</li>
+                    <li><strong>The Result:</strong> Administrative supervision and alignment with JLU, Senckenberg Society, and Fraunhofer Institute, injecting €250,000 directly into the CEMarin budget (76% revenue growth in 2021).</li>
+                </ul>
+            </div>
+
+            <div class="content-group">
+                <h3>3. International Representation</h3>
+                <ul>
+                    <li><strong>Horizon 2020 - EU-LAC NCP:</strong> Official delegate for the Ministry of Science (Colciencias) for regional strategic alignment.</li>
+                    <li><strong>ENSOCIO-LAC Final Workshop:</strong> Responsible for technical and strategic deliverables for the European Commission.</li>
+                    <li><strong>10 Years DAAD Excellence Centers:</strong> Strategic Panelist and Rapporteur.</li>
+                    <li><strong>DAAD Webinar: Digital Formats:</strong> Presenter on digitalization during the pandemic.</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="assets/dossier/msv/horizon2020-eu-lac-ncp.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> Horizon 2020 Report</a>
+                    <a href="assets/dossier/msv/ensocio-lac-workshop.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> ENSOCIO-LAC</a>
+                    <a href="assets/dossier/msv/daad-10-years-excellence.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> DAAD 10 Years</a>
+                    <a href="assets/dossier/msv/daad-digital-webinar-2020.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> DAAD Webinar Slides</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RevOps & Digital Architecture -->
+        <section class="glass-card fade-in-up delay-3">
+            <h2 class="section-title"><i class="fa-solid fa-microchip"></i> RevOps & Digital Architecture</h2>
+            <p style="color: var(--gray-600); margin-bottom: 2rem; font-style: italic;">Designing the technical infrastructure (CRM, Webhooks, BI) that turns partnership growth into a measurable and scalable process.</p>
+
+            <div class="content-group">
+                <h3>1. Serverless Lead Capture Architecture (Web-to-Sheet)</h3>
+                <ul>
+                    <li><strong>Solution:</strong> Implementation of a Custom Webhook in JavaScript acting as a backend micro-service.</li>
+                    <li><strong>Impact:</strong> Smart routing with automatic validation in Google Sheets, bypassing CORS restrictions and avoiding monthly costs.</li>
+                </ul>
+            </div>
+
+            <div class="content-group">
+                <h3>2. Custom AI Accounting Assistant</h3>
+                <ul>
+                    <li><strong>Solution:</strong> Specialized AI Agent (Gemini) with structured financial rules for data extraction from physical receipts.</li>
+                    <li><strong>Impact:</strong> 90% reduction in processing time and 100% accuracy in data migration.</li>
+                </ul>
+            </div>
+            
+            <div class="content-group">
+                <h3>3. Business Intelligence & Web Deployment</h3>
+                <ul>
+                    <li><strong>B.I. Dashboards:</strong> Creation of a real-time operational engine for Casa Normandia (2026).</li>
+                    <li><strong>Multimedia Brand Direction:</strong> Production of institutional profiles ("What is CEMarin?" and ICMS 2023).</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="assets/dossier/msv/revops-tech-stack-msv.pdf" target="_blank" class="btn-action"><i class="fa-solid fa-file-pdf"></i> Tech Stack Details</a>
+                </div>
+            </div>
+
+            <div class="content-group">
+                <h3>4. Text-Based CRM & Agentic AI Orchestration</h3>
+                <ul>
+                    <li><strong>Problem:</strong> Traditional CRMs (Salesforce/HubSpot) are slow, expensive, and pigeonhole qualitative data of complex B2B sales.</li>
+                    <li><strong>Solution:</strong> Architecture of a purely text-based CRM (Markdown + Git), managed entirely through Artificial Intelligence Agents (Antigravity/Gemini).</li>
+                    <li><strong>Impact:</strong> Creation of a "Shadow Office" with total data privacy control, where AI processes meeting histories, classifies leads (Frontmatter YAML), and automatically generates Business Cases. Demonstrating advanced Prompt Engineering capabilities and workflow automation in code repositories.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Media & Keynotes Playlist -->
+        <section class="glass-card fade-in-up delay-4">
+            <h2 class="section-title"><i class="fa-solid fa-play"></i> Media & Keynotes</h2>
+            <p style="color: var(--gray-600); margin-bottom: 2rem; font-style: italic;">Featured talks, webinars, and multimedia direction.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                
+                <!-- Video 1 -->
+                <div style="background: rgba(255,255,255,0.5); border-radius: 1.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.8);">
+                    <h3 style="font-size: 1rem; color: var(--gray-900); margin-bottom: 0.8rem; text-align: center;">The Online Executive Briefing</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/zGBTeqfVP98?rel=0" title="The Online Executive Briefing" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div style="background: rgba(255,255,255,0.5); border-radius: 1.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.8);">
+                    <h3 style="font-size: 1rem; color: var(--gray-900); margin-bottom: 0.8rem; text-align: center;">DAAD Panel Session</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/7Uved4kraSE?rel=0" title="DAAD Panel Session" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div style="background: rgba(255,255,255,0.5); border-radius: 1.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.8);">
+                    <h3 style="font-size: 1rem; color: var(--gray-900); margin-bottom: 0.8rem; text-align: center;">What is CEMarin?</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/K30yVPsH-Xo?rel=0" title="What is CEMarin?" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div style="background: rgba(255,255,255,0.5); border-radius: 1.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.8);">
+                    <h3 style="font-size: 1rem; color: var(--gray-900); margin-bottom: 0.8rem; text-align: center;">ICMS 2023 Highlights</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/gxY5IxukcOg?rel=0" title="ICMS 2023 Highlights" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    
+                    // Trigger counters if they exist in this card
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if(counter.innerText === '0') {
+                            const updateCount = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const prefix = counter.getAttribute('data-prefix') || '';
+                                const suffix = counter.getAttribute('data-suffix') || '';
+                                const count = +counter.innerText.replace(/[^0-9]/g, '');
+                                const inc = target / 40; 
+
+                                if (count < target) {
+                                    counter.innerText = prefix + Math.ceil(count + inc) + suffix;
+                                    setTimeout(updateCount, 40);
+                                } else {
+                                    counter.innerText = prefix + target + suffix;
+                                }
+                            };
+                            updateCount();
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach((el, index) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
