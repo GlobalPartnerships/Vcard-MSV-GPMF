@@ -2,9 +2,7 @@
 **Marcela Sánchez Vargas**
 Founding Director | Strategic Operator | Tech-Enabled Leader
 +57 3124007422 | [LinkedIn](https://www.linkedin.com/in/marcelasanchezintercultural)
-
-> "Orchestrating B2B growth through high-impact ecosystems, analytical rigor, and cross-border scalability."
-
+> "Architecting B2B partnership ecosystems, cross-border revenue operations, and institutional governance."
 **🌐 DIGITAL PORTFOLIO NAVIGATION**
 *This document is part of a comprehensive application. You can access the full verified dossier, including Academic Credentials, Strategic References, and Technical Work Samples, through the [**Marcela Sánchez Vargas - Digital Portfolio Index**](https://1drv.ms/f/c/3fd7393b9efa6132/IgCrQu8Z-J4HTp05uhctfesfAZxe7MbsfFlBwyrCxtLLkOg?e=xIMc7i).*
 
@@ -64,7 +62,11 @@ Throughout my career, I have specialized in a critical niche: **building and sca
 * **Multimedia Brand Direction:** Producción de perfiles institucionales como [**"¿Qué es el CEMarin?"**](https://www.youtube.com/watch?v=K30yVPsH-Xo) y [**Highlights ICMS 2023**](https://www.youtube.com/watch?v=gxY5IxukcOg).
 * **Process Engineering:** Arquitectura de procesos para CEMarin *(Ver [CEMarin Processes Design Portfolio en Behance](https://www.behance.net/gallery/197422131/CEMARIN-Processes-Design-Consultancy))*.
 
-### 4. Continuous Learning: Modern Tech Stack
+### 4. Text-Based CRM & Agentic AI Orchestration
+* **Architecture:** Architecture of a high-velocity, text-based CRM layer (Markdown, Git, YAML frontmatter) orchestrated by AI Agents (Antigravity/Gemini) to enrich qualitative deal context before syncing into enterprise pipelines.
+* **Impact:** Total data sovereignty, automated lead profiling, and instant business case drafting.
+
+### 5. Continuous Learning: Modern Tech Stack
 * [**Tech for Managers & Directors**](https://1drv.ms/b/c/3fd7393b9efa6132/IQCSjNYRGPjHS6-KRH8brCnXAY-HpXGs2ach1bXVdQNhc_k?e=0OeZpe) (Platzi, 2025).
 * [**Digital Transformation**](https://1drv.ms/b/c/3fd7393b9efa6132/IQAyYfqeOznXIIA_m1oAAAAAAVPB0x8OBARPkVjoSICKWAM?e=C5o9GG) (BCG/Coursera, 2021).
 * [**Business Metrics for Data-Driven Companies**](https://1drv.ms/b/c/3fd7393b9efa6132/IQAyYfqeOznXIIA_nVoAAAAAAbFdgbhY7F9Qm9mUUYhZLTI?e=uCXPKL) (Duke/Coursera, 2020).
