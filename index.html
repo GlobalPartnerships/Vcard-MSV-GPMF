@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta Digital | Marcela Sánchez Vargas</title>
+    <!-- PWA Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7A0F32">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MSV VCard">
+    <link rel="apple-touch-icon" href="assets/logo/burgundy%20ball.png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,9 +144,9 @@
 
         .profile-pic-container {
             position: relative;
-            width: 150px;
-            height: 150px;
-            margin: -100px auto 0 auto;
+            width: 120px;
+            height: 120px;
+            margin: -75px auto 0 auto;
             z-index: 2;
         }
 
@@ -311,6 +318,15 @@
             .digital-card {
                 padding: 3rem 2rem;
             }
+            .card-banner {
+                width: calc(100% + 4rem);
+                margin: -3rem -2rem 0 -2rem;
+            }
+            .profile-pic-container {
+                width: 105px;
+                height: 105px;
+                margin: -65px auto 0 auto;
+            }
             .name {
                 font-size: 2.25rem;
             }
@@ -415,7 +431,7 @@
                 Enviar Correo
             </a>
             
-            <a id="addToContacts" class="btn-link">
+            <a href="#" id="addToContacts" class="btn-link" role="button">
                 <i class="fa-solid fa-download"></i>
                 Descargar vCard
             </a>
@@ -506,6 +522,15 @@ END:VCARD`;
                 window.URL.revokeObjectURL(url);
             }, 100);
         });
+
+        // Registrar Service Worker para soporte Offline (PWA)
+        if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((reg) => console.log('Service Worker PWA activo:', reg.scope))
+                    .catch((err) => console.warn('Aviso Service Worker:', err));
+            });
+        }
     </script>
 </body>
 </html>
