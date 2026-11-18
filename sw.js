@@ -3,6 +3,7 @@ const CACHE_NAME = 'msv-vcard-v1';
 const STATIC_ASSETS = [
   './',
   './index.html',
+  './portfolio.html',
   './manifest.json',
   './assets/banner-connect.png',
   './assets/marceperfil.jpg',
