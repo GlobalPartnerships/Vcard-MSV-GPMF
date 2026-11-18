@@ -2,24 +2,23 @@
   "name": "Marcela Sánchez Vargas | VCard",
   "short_name": "MSV VCard",
   "description": "Tarjeta Digital de Marcela Sánchez Vargas - Global Partnerships & Multidisciplinary Firm",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#7A0F32",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "assets/logo/burgundy%20ball.png",
+      "src": "assets/logo/burgundy-ball.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "assets/logo/burgundy%20ball.png",
+      "src": "assets/logo/burgundy-ball.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ]
 }

@@ -6,7 +6,7 @@ const STATIC_ASSETS = [
   './manifest.json',
   './assets/banner-connect.png',
   './assets/marceperfil.jpg',
-  './assets/logo/burgundy%20ball.png',
+  './assets/logo/burgundy-ball.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'
