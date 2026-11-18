@@ -315,20 +315,37 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 0.75rem;
+            }
             .digital-card {
-                padding: 3rem 2rem;
+                padding: 2rem 1.25rem;
+                border-radius: 1.5rem;
+                gap: 1.75rem;
+                width: 100%;
             }
             .card-banner {
-                width: calc(100% + 4rem);
-                margin: -3rem -2rem 0 -2rem;
+                width: calc(100% + 2.5rem);
+                margin: -2rem -1.25rem 0 -1.25rem;
+                height: 160px;
             }
             .profile-pic-container {
                 width: 105px;
                 height: 105px;
-                margin: -65px auto 0 auto;
+                margin: -60px auto 0 auto;
             }
             .name {
-                font-size: 2.25rem;
+                font-size: 2rem;
+            }
+            .role {
+                font-size: 1.1rem;
+            }
+            .company {
+                font-size: 0.8rem;
+            }
+            .btn-link {
+                padding: 1.1rem 1.25rem;
+                font-size: 1rem;
             }
         }
 
@@ -383,6 +400,37 @@
             text-align: center;
             transform: translateY(20px) scale(0.95);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 320px;
+            width: 90%;
+        }
+        .qr-tabs {
+            display: flex;
+            background: var(--gray-100);
+            border-radius: var(--radius-btn);
+            padding: 4px;
+            margin-bottom: 1.5rem;
+            gap: 4px;
+        }
+        .qr-tab {
+            flex: 1;
+            padding: 0.6rem 0.8rem;
+            border: none;
+            background: transparent;
+            border-radius: var(--radius-btn);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: var(--transition-fluid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .qr-tab.active {
+            background: white;
+            color: var(--gpmf-burgundy);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .qr-overlay.active .qr-card {
             transform: translateY(0) scale(1);
@@ -459,8 +507,22 @@
     <!-- QR Overlay -->
     <div id="qrOverlay" class="qr-overlay">
         <div class="qr-card">
-            <div id="qrcode"></div>
-            <h3>Escanea para ver la tarjeta</h3>
+            <!-- Tabs switch -->
+            <div class="qr-tabs">
+                <button type="button" id="qrTabOffline" class="qr-tab active">
+                    <i class="fa-solid fa-address-card"></i> Guardar Contacto
+                </button>
+                <button type="button" id="qrTabOnline" class="qr-tab">
+                    <i class="fa-solid fa-globe"></i> Tarjeta Web
+                </button>
+            </div>
+
+            <div id="qrcode" style="display: flex; justify-content: center; min-height: 200px; align-items: center;"></div>
+
+            <h3 id="qrTitle" style="margin-top: 1.25rem; font-size: 1.1rem; color: var(--gray-900);">Escanea para guardar contacto</h3>
+            <p id="qrSubtitle" style="font-size: 0.85rem; color: var(--gray-600); margin-top: 0.35rem;">
+                Funciona sin internet en el otro teléfono
+            </p>
         </div>
     </div>
 
@@ -468,34 +530,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <script>
-        // QR Code Logic
-        let qrGenerated = false;
-        const overlay = document.getElementById('qrOverlay');
-        
-        document.getElementById('showQrBtn').addEventListener('click', () => {
-            overlay.classList.add('active');
-            if (!qrGenerated) {
-                new QRCode(document.getElementById("qrcode"), {
-                    text: "https://globalpartnerships.github.io/Vcard-MSV-GPMF/", // Siempre apuntará a la VCard online
-                    width: 200,
-                    height: 200,
-                    colorDark : "#2E2E2E",
-                    colorLight : "#ffffff",
-                    correctLevel : QRCode.CorrectLevel.H
-                });
-                qrGenerated = true;
-            }
-        });
-
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                overlay.classList.remove('active');
-            }
-        });
-
-        document.getElementById('addToContacts').addEventListener('click', function (e) {
-            e.preventDefault();
-            const vCard = `BEGIN:VCARD
+        // Shared vCard Data
+        const vCardData = `BEGIN:VCARD
 VERSION:3.0
 N:Sánchez Vargas;Marcela;;;
 FN:Marcela Sánchez Vargas
@@ -508,7 +544,68 @@ X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/marcelasanchezintercul
 REV:${new Date().toISOString()}
 END:VCARD`;
 
-            const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+        const webUrl = "https://globalpartnerships.github.io/Vcard-MSV-GPMF/";
+
+        // QR Code Logic (Dual: Offline Contact & Online Web)
+        let qrCodeInstance = null;
+        const overlay = document.getElementById('qrOverlay');
+        const qrcodeEl = document.getElementById('qrcode');
+        const tabOffline = document.getElementById('qrTabOffline');
+        const tabOnline = document.getElementById('qrTabOnline');
+        const qrTitle = document.getElementById('qrTitle');
+        const qrSubtitle = document.getElementById('qrSubtitle');
+
+        function renderQr(mode) {
+            qrcodeEl.innerHTML = '';
+            
+            if (mode === 'offline') {
+                tabOffline.classList.add('active');
+                tabOnline.classList.remove('active');
+                qrTitle.textContent = "Escanea para guardar contacto";
+                qrSubtitle.textContent = "Funciona sin internet en el otro teléfono";
+                
+                qrCodeInstance = new QRCode(qrcodeEl, {
+                    text: vCardData,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#2E2E2E",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            } else {
+                tabOnline.classList.add('active');
+                tabOffline.classList.remove('active');
+                qrTitle.textContent = "Escanea para ver la tarjeta web";
+                qrSubtitle.textContent = "Abre la experiencia interactiva online";
+
+                qrCodeInstance = new QRCode(qrcodeEl, {
+                    text: webUrl,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#2E2E2E",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+        }
+
+        document.getElementById('showQrBtn').addEventListener('click', () => {
+            overlay.classList.add('active');
+            renderQr('offline'); // Default: Offline contact saving for instant networking
+        });
+
+        tabOffline.addEventListener('click', () => renderQr('offline'));
+        tabOnline.addEventListener('click', () => renderQr('online'));
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+            }
+        });
+
+        document.getElementById('addToContacts').addEventListener('click', function (e) {
+            e.preventDefault();
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
             const url = URL.createObjectURL(blob);
 
             const a = document.createElement('a');
